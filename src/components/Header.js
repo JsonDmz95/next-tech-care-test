@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 
+import NavItem from "./NavItem";
+
 export default function Header() {
   return (
     <header className="d-flex">
@@ -12,23 +14,29 @@ export default function Header() {
           width={210}
           height={48}
         />
-        <img
+        <Image
           src="/TestLogoMobile.svg"
           alt="Tech Care"
           className="logo show hide-lg"
-          width={210}
-          height={48}
+          height={35}
+          width={35}
         />
       </a>
 
       <nav className="navigation">
-        <ul className="navigation-list d-flex"></ul>
+        <ul className="navigation-list d-flex">
+            <NavItem title="Overview" icon="/img/IconOverview.svg" active={false}/>
+            <NavItem title='Patients' icon="/img/IconPatients.svg"  active={true} />
+          <NavItem title='Schedule' icon="/img/IconSchedule.svg" active={false} />
+          <NavItem title='Messages' icon="/img/IconMessage.svg" active={false} />
+          <NavItem title='Transactions' icon="/img/IconTransactions.svg" active={false} />
+        </ul>
       </nav>
 
       <div className='user-profile d-flex'>
         <div className='left d-flex'>
           <Image src="/img/pp.jpg" alt='Dr. Jose Simmons Avatar' height={44} width={44}/>
-          <div className='user-info hide show-xxl'>
+          <div className='user-info hide show-xl'>
             <span className='user-name'>Dr. Jose Simmons</span>
             <span className='user-role'>General Practitioner</span>
           </div>
