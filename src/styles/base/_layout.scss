@@ -1,0 +1,74 @@
+#root{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  main{
+    flex: 1;
+    padding-top: 32px;
+  }
+
+  
+}
+
+.card{
+  background: var(--color-cards);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+@media (min-width: 1200px){
+
+  .diagnosis-section{
+    height: fit-content;
+  }
+
+  main{
+    display: flex;
+    gap: 32px;
+    height: 133%;
+    
+    .patient-view{
+      display: flex;
+      gap: 32px;
+      height: 100%;
+      width: 100%;
+
+
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      
+      .diagnosis-section{
+        order: 0;
+        height: fit-content;
+      }
+      .diagnosis-list-section{
+        order: 1;
+        height: fit-content;
+        max-height: 350px;
+      }
+
+      .patient-info-section{
+        order: 2;
+      }
+
+      .lab-results-section{
+        order: 3;
+      }
+    }
+  }
+  .patients-list{
+    height: 100%;
+    width: 22%;
+  }
+
+  .patient-view{
+    flex: 1;
+    flex-wrap: wrap;
+
+    .diagnosis-section, .diagnosis-list-section{
+      width: 65.69%;
+    }
+  }
+}
