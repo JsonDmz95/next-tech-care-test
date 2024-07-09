@@ -1,11 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Header from "@/components/Header";
 
+import Header from "@/components/Header";
+import PatientsList from "@/components/PatientsList";
 
 export default function Home() {
-
   const [selectPatient, setSelectPatient] = useState({});
   const [fullList, setFullList] = useState([{}]);
   const [patientChartInfo, setpatientChartInfo] = useState({
@@ -14,50 +14,61 @@ export default function Home() {
     xDiastolic: [],
   });
 
-  const APIUrl = 'https://fedskillstest.coalitiontechnologies.workers.dev';
+  const APIUrl = "https://fedskillstest.coalitiontechnologies.workers.dev";
   const APIUsername = "coalition";
   const APIPassword = "skills-test";
-  const APIAuth = 'Basic ' + btoa(APIUsername + ':' + APIPassword);
+  const APIAuth = "Basic " + btoa(APIUsername + ":" + APIPassword);
   const maxMonths = 6;
 
   useEffect(() => {
     fetch(APIUrl, {
       headers: {
-        'Authorization': APIAuth
-      }
-    }).then(async (response) => {
-      const yAxis = [];
-      const xSistolic = [];
-      const xDiastolic = [];
-      if (response.ok) {
-        const patientList = await response.json();
+        Authorization: APIAuth,
+      },
+    })
+      .then(async (response) => {
+        const yAxis = [];
+        const xSistolic = [];
+        const xDiastolic = [];
+        if (response.ok) {
+          const patientList = await response.json();
 
-        setFullList(patientList);
+          setFullList(patientList);
 
-        const patient = patientList.find((patient) => patient.name === 'Jessica Taylor');
+          const patient = patientList.find(
+            (patient) => patient.name === "Jessica Taylor"
+          );
 
-        for (let i = 0; i < maxMonths; i++) {
+          for (let i = 0; i < maxMonths; i++) {
             const diagnosis = patient.diagnosis_history[i];
-            yAxis.unshift(`${diagnosis.month.substring(0, 3)}, ${diagnosis.year}`);
-            xSistolic.unshift(diagnosis.blood_pressure.systolic.value.toString());
-            xDiastolic.unshift(diagnosis.blood_pressure.diastolic.value.toString());
+            yAxis.unshift(
+              `${diagnosis.month.substring(0, 3)}, ${diagnosis.year}`
+            );
+            xSistolic.unshift(
+              diagnosis.blood_pressure.systolic.value.toString()
+            );
+            xDiastolic.unshift(
+              diagnosis.blood_pressure.diastolic.value.toString()
+            );
+          }
+
+          setSelectPatient(patient);
+
+          setpatientChartInfo({
+            yAxis,
+            xSistolic,
+            xDiastolic,
+          });
         }
-
-        setSelectPatient(patient);
-
-        setpatientChartInfo({
-          yAxis,
-          xSistolic,
-          xDiastolic,
-        })
-      }
-      throw response;
-    }).then(function (data){
-      console.log(data);
-    }).catch(function(error){
-      console.warn(error);
-    });
-  }, [])
+        throw response;
+      })
+      .then(function (data) {
+        console.log(data);
+      })
+      .catch(function (error) {
+        console.warn(error);
+      });
+  }, []);
 
   return (
     <>
@@ -67,10 +78,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className=''>
+      <main className="">
         <Header />
-        
-        <section className="main-body"></section>
+
+        <section className="main-body">
+          <PatientsList list={fullList} />
+        </section>
       </main>
     </>
   );

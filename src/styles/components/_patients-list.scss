@@ -1,0 +1,49 @@
+.patients-list{
+    overflow-y: scroll;
+    .card-header{
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    
+    ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  
+    li{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+  
+      cursor: pointer;
+      transition: all ease-out 0.3s;
+  
+      &:hover, &.active{
+        background: #D8FCF7;
+      }
+  
+      .left{
+        display: flex;
+        gap: 12px;
+        align-items: center;
+  
+        img{
+          height: 48px;
+          width: 48px;
+        }
+  
+        .text{
+          b{
+            display: block;
+            margin-bottom: 5px;
+          }
+  
+          span{
+            color: #707070;
+          }
+        }
+      }
+    }
+  }
