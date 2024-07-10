@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import DiagnosisItem from "./DiagnosisItem";
+import PatientInfo from "./PatientInfo";
 
 Chart.register(...registerables);
 const canvasId = "blood-pressure-chart";
@@ -173,6 +174,8 @@ export default function PatientView({ patient, patientChartInfo }) {
           />
         </div>
       </div>
+
+      <PatientInfo name={patient.name} gender={patient.gender} profilePicture="/img/patient_pp.png" dateOfBirth={patient.date_of_birth} phone={patient.phone_number} emergencyContact={patient.emergency_contact} insuranceType={patient.insurance_type}/>
     </section>
   );
 }

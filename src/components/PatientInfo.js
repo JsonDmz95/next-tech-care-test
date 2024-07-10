@@ -53,7 +53,7 @@ export default function PatientInfo({
 
         <div className="patient-info-item d-flex">
           <div className="left">
-            <img src={IconInfoPhone} alt="Contact Info." />
+            <Image src="/img/IconInfoPhone.svg" alt="Contact Info." width={42} height={42}/>
           </div>
 
           <div className="right">
@@ -64,7 +64,7 @@ export default function PatientInfo({
 
         <div className="patient-info-item d-flex">
           <div className="left">
-            <img src={IconInfoPhone} alt="Emergency Contacts" />
+            <Image src="/img/IconInfoPhone.svg" alt="Emergency Contacts" width={42} height={42}/>
           </div>
 
           <div className="right">
@@ -75,7 +75,7 @@ export default function PatientInfo({
 
         <div className="patient-info-item d-flex">
           <div className="left">
-            <img src={IconInfoInsurance} alt="Insurance Provider" />
+            <Image src="/img/IconInfoInsurance.svg" alt="Insurance Provider" height={42} width={42}/>
           </div>
 
           <div className="right">

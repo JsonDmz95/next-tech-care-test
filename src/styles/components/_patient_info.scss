@@ -1,0 +1,56 @@
+.patient-info-section{
+  padding: 32px 20px;
+  text-align: center;
+
+
+  .patient-avatar{
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 24px auto;
+    display: block;
+  }
+
+  .patient-name{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 32px;
+  }
+
+  .patient-info{
+    margin-bottom: 40px;
+  }
+
+  .patient-info-item{
+    justify-content: flex-start;
+    gap: 16px;
+    text-align: left;
+
+    .left{
+      flex: 0;
+    }
+
+    .right span{
+      display: block;
+
+      &+span{
+        margin-top: 4px;
+      }
+
+      &.info-value{
+        font-weight: 800;
+      
+      }
+    }
+
+    &+.patient-info-item{
+      margin-top: 24px;
+    }
+  }
+}
+
+@media (min-width: 1200px){
+  .patient-info-section{
+    max-width: 30%;
+  }
+}
