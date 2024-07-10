@@ -1,18 +1,18 @@
-import React from "react";
 import { Chart, registerables } from "chart.js";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import DiagnosisItem from "./DiagnosisItem";
 import PatientInfo from "./PatientInfo";
-
-Chart.register(...registerables);
-const canvasId = "blood-pressure-chart";
+import DiagnosisList from "./DiagnosisList";
 
 export default function PatientView({ patient, patientChartInfo }) {
   const [respiratoryRate, setRespiratoryRate] = useState({});
   const [bodyTemperature, setBodyTemperature] = useState({});
   const [heartRate, setHeartRate] = useState({});
+
+  Chart.register(...registerables);
+  const canvasId = "blood-pressure-chart";
 
   useEffect(() => {
     const c = Chart.getChart(canvasId);
@@ -140,8 +140,12 @@ export default function PatientView({ patient, patientChartInfo }) {
                 {patientChartInfo.xDiastolic.slice(-1)}
               </span>
               <p className="limit-legend">
-                <Image src="/img/ArrowDown.svg" alt="Arrow Down" width={10}
-                  height={5.5}/>
+                <Image
+                  src="/img/ArrowDown.svg"
+                  alt="Arrow Down"
+                  width={10}
+                  height={5.5}
+                />
                 Lower than Average
               </p>
             </div>
@@ -175,7 +179,17 @@ export default function PatientView({ patient, patientChartInfo }) {
         </div>
       </div>
 
-      <PatientInfo name={patient.name} gender={patient.gender} profilePicture="/img/patient_pp.png" dateOfBirth={patient.date_of_birth} phone={patient.phone_number} emergencyContact={patient.emergency_contact} insuranceType={patient.insurance_type}/>
+      <PatientInfo
+        name={patient.name}
+        gender={patient.gender}
+        profilePicture="/img/patient_pp.png"
+        dateOfBirth={patient.date_of_birth}
+        phone={patient.phone_number}
+        emergencyContact={patient.emergency_contact}
+        insuranceType={patient.insurance_type}
+      />
+
+      <DiagnosisList list={patient.diagnostic_list} />
     </section>
   );
 }

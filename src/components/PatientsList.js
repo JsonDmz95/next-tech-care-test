@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function PatientsList({list}) {
   return (
-    <div className="patients-list card">
+    <div className="patients-list card d-flex">
       <div className="card-header d-flex">
         <h3 className="card-title">Patients</h3>
         <Image src="/img/IconSearch.svg" alt="Search" width={18} height={18}/>
