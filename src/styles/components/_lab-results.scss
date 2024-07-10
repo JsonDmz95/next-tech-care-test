@@ -1,0 +1,25 @@
+.lab-results-section{
+  .card-title{
+    margin-bottom: 16px;
+  }
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-transform: capitalize;
+      padding: 10px 15px;
+
+      transition: all ease-out 0.3s;
+      cursor: pointer;
+
+      &:hover{
+        background: #F6F7F8;
+      }
+    }
+  }
+}

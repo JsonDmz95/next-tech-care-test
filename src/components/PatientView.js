@@ -5,6 +5,7 @@ import Image from "next/image";
 import DiagnosisItem from "./DiagnosisItem";
 import PatientInfo from "./PatientInfo";
 import DiagnosisList from "./DiagnosisList";
+import LabResults from "./LabResults";
 
 export default function PatientView({ patient, patientChartInfo }) {
   const [respiratoryRate, setRespiratoryRate] = useState({});
@@ -190,6 +191,8 @@ export default function PatientView({ patient, patientChartInfo }) {
       />
 
       <DiagnosisList list={patient.diagnostic_list} />
+
+      <LabResults list={patient.lab_results} />
     </section>
   );
 }
