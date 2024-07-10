@@ -1,9 +1,6 @@
 import React from "react";
 import Image from "next/image";
 
-// import IconSearch from "../img/IconSearch.svg";
-// import IconMoreHor from "../img/IconMoreHor.svg";
-
 export default function PatientsList({list}) {
   return (
     <div className="patients-list card">

@@ -1,0 +1,35 @@
+.diagnosis-info{
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.diagnosis-item{
+  padding: 16px;
+  border-radius: 12px;
+  flex: 1;
+
+  &.blue{
+    background-color: #E0F3FA;
+  }
+
+  &.red{
+    background-color: #FFE6E9;
+  }
+
+  &.pink{
+    background-color: #FFE6F1;
+  }
+
+  .diagnosis-title{
+    margin-top: 16px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .value{
+    font-weight: 800;
+    font-size: 30px;
+    margin-bottom: 17px;
+  }
+}

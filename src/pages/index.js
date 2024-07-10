@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import Header from "@/components/Header";
 import PatientsList from "@/components/PatientsList";
+import PatientView from "@/components/PatientView";
 
 export default function Home() {
   const [selectPatient, setSelectPatient] = useState({});
@@ -83,6 +84,8 @@ export default function Home() {
 
         <section className="main-body">
           <PatientsList list={fullList} />
+
+          <PatientView patient={selectPatient} patientChartInfo={patientChartInfo}/>
         </section>
       </main>
     </>

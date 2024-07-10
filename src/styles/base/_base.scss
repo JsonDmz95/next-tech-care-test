@@ -4,6 +4,7 @@ body{
   background-color: var(--color-background);
   padding: 18px;
   font-size: var(--font-size);
+  margin: 0;
 }
 
 a{
@@ -87,6 +88,10 @@ h1,h2,h3, h4, h5, h6{
 }
 
 @media (min-width: 1440px){
+  body{
+    // max-height: 100vh;
+    // overflow: hidden;
+  }
   .hide-xxl{
     display: none;
   }
