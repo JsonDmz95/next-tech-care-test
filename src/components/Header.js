@@ -8,14 +8,14 @@ export default function Header() {
     <header className="d-flex">
       <a href="/" className="logo-container d-flex" title="Tech Care">
         <Image
-          src="/TestLogo.svg"
+          src="./TestLogo.svg"
           alt="Tech Care"
           className="logo hide show-lg"
           width={210}
           height={48}
         />
         <Image
-          src="/TestLogoMobile.svg"
+          src="./TestLogoMobile.svg"
           alt="Tech Care"
           className="logo show hide-lg"
           height={35}
@@ -27,27 +27,27 @@ export default function Header() {
         <ul className="navigation-list d-flex">
           <NavItem
             title="Overview"
-            icon="/img/IconOverview.svg"
+            icon="./img/IconOverview.svg"
             active={false}
           />
           <NavItem
             title="Patients"
-            icon="/img/IconPatients.svg"
+            icon="./img/IconPatients.svg"
             active={true}
           />
           <NavItem
             title="Schedule"
-            icon="/img/IconSchedule.svg"
+            icon="./img/IconSchedule.svg"
             active={false}
           />
           <NavItem
             title="Messages"
-            icon="/img/IconMessage.svg"
+            icon="./img/IconMessage.svg"
             active={false}
           />
           <NavItem
             title="Transactions"
-            icon="/img/IconTransactions.svg"
+            icon="./img/IconTransactions.svg"
             active={false}
           />
         </ul>
@@ -56,7 +56,7 @@ export default function Header() {
       <div className="user-profile d-flex">
         <div className="left d-flex">
           <Image
-            src="/img/pp.jpg"
+            src="./img/pp.jpg"
             alt="Dr. Jose Simmons Avatar"
             height={44}
             width={44}
@@ -69,13 +69,13 @@ export default function Header() {
 
         <div className="right">
           <Image
-            src="/img/IconSettings.svg"
+            src="./img/IconSettings.svg"
             alt="Settings"
             height={20}
             width={19}
           />
           <Image
-            src="/img/IconMoreVert.svg"
+            src="./img/IconMoreVert.svg"
             alt="More Options"
             height={18}
             width={4}

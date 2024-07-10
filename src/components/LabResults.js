@@ -12,7 +12,7 @@ export default function LabResults({ list }) {
               <li key={index}>
                 <span className="lab-name">{item}</span>
                 <Image
-                  src="/img/IconDownload.svg"
+                  src="./img/IconDownload.svg"
                   alt="Download"
                   width={20}
                   height={20}

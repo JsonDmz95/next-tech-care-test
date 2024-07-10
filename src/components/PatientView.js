@@ -107,7 +107,7 @@ export default function PatientView({ patient, patientChartInfo }) {
               <div className="time-filter">
                 <span>Last 6 months</span>
                 <Image
-                  src="/img/IconDown.svg"
+                  src="./img/IconDown.svg"
                   alt="Down Arrow"
                   height={6}
                   width={11}
@@ -126,7 +126,7 @@ export default function PatientView({ patient, patientChartInfo }) {
               </span>
               <p className="limit-legend">
                 <Image
-                  src="/img/ArrowUp.svg"
+                  src="./img/ArrowUp.svg"
                   alt="Arrow Up"
                   width={10}
                   height={5.5}
@@ -142,7 +142,7 @@ export default function PatientView({ patient, patientChartInfo }) {
               </span>
               <p className="limit-legend">
                 <Image
-                  src="/img/ArrowDown.svg"
+                  src="./img/ArrowDown.svg"
                   alt="Arrow Down"
                   width={10}
                   height={5.5}
@@ -155,7 +155,7 @@ export default function PatientView({ patient, patientChartInfo }) {
 
         <div className="diagnosis-info d-flex">
           <DiagnosisItem
-            icon="/img/IconRespiratoryRate.svg"
+            icon="./img/IconRespiratoryRate.svg"
             title="Respiratory Rate"
             value={`${respiratoryRate.value} bpm`}
             level={respiratoryRate.levels}
@@ -163,7 +163,7 @@ export default function PatientView({ patient, patientChartInfo }) {
           />
 
           <DiagnosisItem
-            icon="/img/IconTemperature.svg"
+            icon="./img/IconTemperature.svg"
             title="Temperature"
             value={`${bodyTemperature.value}°F`}
             level={bodyTemperature.levels}
@@ -171,7 +171,7 @@ export default function PatientView({ patient, patientChartInfo }) {
           />
 
           <DiagnosisItem
-            icon="/img/IconHeartRate.svg"
+            icon="./img/IconHeartRate.svg"
             title="Heart Rate"
             value={`${heartRate.value} bmp`}
             level={heartRate.levels}
@@ -183,7 +183,7 @@ export default function PatientView({ patient, patientChartInfo }) {
       <PatientInfo
         name={patient.name}
         gender={patient.gender}
-        profilePicture="/img/patient_pp.png"
+        profilePicture="./img/patient_pp.png"
         dateOfBirth={patient.date_of_birth}
         phone={patient.phone_number}
         emergencyContact={patient.emergency_contact}

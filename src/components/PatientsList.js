@@ -6,7 +6,7 @@ export default function PatientsList({ list }) {
     <div className="patients-list card d-flex">
       <div className="card-header d-flex">
         <h3 className="card-title">Patients</h3>
-        <Image src="/img/IconSearch.svg" alt="Search" width={18} height={18} />
+        <Image src="./img/IconSearch.svg" alt="Search" width={18} height={18} />
       </div>
 
       <div className="card-body">
@@ -35,7 +35,7 @@ export default function PatientsList({ list }) {
               </div>
 
               <Image
-                src="/img/IconMoreHor.svg"
+                src="./img/IconMoreHor.svg"
                 alt="More"
                 height={4}
                 width={18}
